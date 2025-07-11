@@ -11,6 +11,7 @@ Este dominio evalúa tu capacidad para diseñar soluciones que sean escalables, 
 - [Desacoplamiento a gran escala con SNS + SQS](#3--desacoplamiento-a-gran-escala-con-sns--sqs)
 - [Procesamiento ordenado de pedidos con API Gateway + FIFO SQS + Lambda](#4--procesamiento-ordenado-de-pedidos-con-api-gateway--fifo-sqs--lambda)
 - [Optimización de rendimiento web con CloudFront + S3 + ALB + Route 53](#5--optimización-de-rendimiento-web-con-cloudfront--s3--alb--route-53)
+- [Escalado de lecturas con Aurora Replicas y Auto Scaling](#6--escalado-de-lecturas-con-aurora-replicas-y-auto-scaling)
 - [📌 Notas](#-notas)
 - [📚 Recursos complementarios](#-recursos-complementarios)
 
@@ -71,6 +72,19 @@ Una aplicación web global necesita reducir la latencia tanto en contenido está
 - Usar CloudFront con múltiples orígenes (S3 + ALB).
 - Enrutar el tráfico del dominio personalizado con Route 53.
 - Cachear el contenido estático y distribuir dinámicamente el dinámico.
+
+
+
+### 6. 🧩 [Escalado de lecturas con Aurora Replicas y Auto Scaling](./06-aurora-replicas-autoscaling/README.md)
+
+**Resumen del problema**:  
+Una base de datos en EC2 no escala adecuadamente para atender una aplicación con muchas lecturas.
+
+**Solución clave**:
+- Migrar a Amazon Aurora con implementación Multi-AZ.
+- Habilitar Aurora Auto Scaling para crear/detener réplicas de forma dinámica.
+- Balancear el tráfico de lectura mediante Aurora Reader Endpoint.
+
 
 ---
 
