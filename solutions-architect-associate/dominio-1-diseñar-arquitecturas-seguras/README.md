@@ -9,6 +9,7 @@ Este dominio se centra en cómo proteger la infraestructura de AWS mediante el u
 - [🔐 Lambda accediendo a S3 en otra cuenta](#1--lambda-accediendo-a-s3-en-otra-cuenta)
 - [🛡️ VPC compartida con AWS Organizations](#2-️-vpc-compartida-con-aws-organizations)
 - [Rotación de credenciales RDS multirregional con Secrets Manager](#3--rotación-de-credenciales-rds-multirregional-con-secrets-manager)
+- [Control de salida IPv6 con Egress-Only Gateway y AWS Network Firewall](#4--control-de-salida-ipv6-con-egress-only-gateway-y-aws-network-firewall)
 - [📌 Notas](#-notas)
 - [📚 Recursos complementarios](#-recursos-complementarios)
 
@@ -49,6 +50,19 @@ Durante mantenimientos mensuales, una empresa necesita rotar credenciales de RDS
 - Usar AWS Secrets Manager con rotación automática.
 - Habilitar replicación multirregional del secreto.
 - Integrar con RDS for MySQL sin escribir código adicional.
+
+
+
+### 4. 🔐 [Control de salida IPv6 con Egress-Only Gateway y AWS Network Firewall](./04-egress-only-firewall-ipv6/README.md)
+
+**Resumen del problema**:  
+Una instancia EC2 en una VPC IPv6 debe comunicarse hacia internet, pero sin aceptar tráfico entrante, y con inspección de tráfico saliente.
+
+**Solución clave**:
+- Lanzar EC2 en subred privada.
+- Usar Egress-Only Internet Gateway para salida IPv6.
+- Inspeccionar y filtrar tráfico con AWS Network Firewall.
+
 
 
 ---
