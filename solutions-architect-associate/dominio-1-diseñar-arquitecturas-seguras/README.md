@@ -10,6 +10,7 @@ Este dominio se centra en cómo proteger la infraestructura de AWS mediante el u
 - [🛡️ VPC compartida con AWS Organizations](#2-️-vpc-compartida-con-aws-organizations)
 - [Rotación de credenciales RDS multirregional con Secrets Manager](#3--rotación-de-credenciales-rds-multirregional-con-secrets-manager)
 - [Control de salida IPv6 con Egress-Only Gateway y AWS Network Firewall](#4--control-de-salida-ipv6-con-egress-only-gateway-y-aws-network-firewall)
+- [Bloqueo inmediato de IPs maliciosas con NACL](#5--bloqueo-inmediato-de-ips-maliciosas-con-nacl)
 - [📌 Notas](#-notas)
 - [📚 Recursos complementarios](#-recursos-complementarios)
 
@@ -64,6 +65,16 @@ Una instancia EC2 en una VPC IPv6 debe comunicarse hacia internet, pero sin acep
 - Inspeccionar y filtrar tráfico con AWS Network Firewall.
 
 
+
+### 5. 🔐 [Bloqueo inmediato de IPs maliciosas con NACL](./05-bloqueo-ip-nacl/README.md)
+
+**Resumen del problema**:  
+La aplicación recibe millones de solicitudes desde unas pocas IP maliciosas, causando degradación de rendimiento.
+
+**Solución clave**:
+- Aplicar reglas `DENY` en NACLs asociadas a las subredes del nivel web (ALB).
+- Bloquear IPs ofensivas directamente a nivel de red.
+- Mitigar el impacto mientras se implementa una solución más completa como WAF.
 
 ---
 
