@@ -45,13 +45,13 @@ Modificar las **Listas de Control de Acceso de Red (Network ACL)** asociadas a l
 
 ## 🛡️ Ejemplo de configuración de reglas NACL
 
-```markdown
+
 | Nº | Tipo      | Protocolo | Puerto | Origen              | Acción   |
 |----|-----------|-----------|--------|----------------------|----------|
 | 100| ALL TRAFFIC | ALL     | ALL    | 203.0.113.45/32      | DENY     |
 | 110| ALL TRAFFIC | ALL     | ALL    | 198.51.100.0/24      | DENY     |
 | 200| ALL TRAFFIC | ALL     | ALL    | 0.0.0.0/0            | ALLOW    |
-```
+
 
 > 🔎 Notas:
 > - Las NACLs evalúan las reglas en orden por número (ascendente).
